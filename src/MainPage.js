@@ -24,6 +24,7 @@ class MainPage extends Component {
                     <Book
                     book={book}
                     moveToShelf={this.props.moveToShelf} /* pass it from one component to another*/
+                    shelfValue='currentlyReading'
                     />
                   </li>))
                 }
@@ -41,6 +42,7 @@ class MainPage extends Component {
                         <Book
                         book={book}
                         moveToShelf={this.props.moveToShelf}
+                        shelfValue='wantToRead'
                         />
                       </li>))
                   }
@@ -59,6 +61,7 @@ class MainPage extends Component {
                     <Book
                     book={book}
                     moveToShelf={this.props.moveToShelf}
+                    shelfValue='read'
                     />
                   </li>))
                 }
