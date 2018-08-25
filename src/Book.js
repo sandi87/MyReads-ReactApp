@@ -2,9 +2,12 @@ import React, { Component } from "react";
 
 class Book extends Component {
   render() {
-    {/* this provides that search works correctly when a book does not have a thumbnai*/}
-      let displayThumbnail = this.props.book.imageLinks ?
-      this.props.book.imageLinks.thumbnail : '';
+    {
+      /* this provides that search works correctly when a book does not have a thumbnai*/
+    }
+    let displayThumbnail = this.props.book.imageLinks
+      ? this.props.book.imageLinks.thumbnail
+      : "";
 
     return (
       <div className="book">
@@ -19,10 +22,14 @@ class Book extends Component {
           />
           <div className="book-shelf-changer">
             <select
-            onChange={(event) => this.props.moveToShelf(
-              this.props.book, event.target.value /*this is the shelf element (the value of selected element)*/
-            )}
-            value={this.props.shelfValue}
+              onChange={event =>
+                this.props.changeShelf(
+                  this.props.book,
+                  event.target
+                    .value /*this is the shelf element (the value of selected element)*/
+                )
+              }
+              value={this.props.shelfValue}
             >
               <option value="move" disabled>
                 Move to...

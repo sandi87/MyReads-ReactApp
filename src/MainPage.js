@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Book from "./Book";
-
 
 class MainPage extends Component {
   render() {
@@ -16,19 +15,22 @@ class MainPage extends Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  { /*display books on proper shelves using filter and map methods
+                  {/*display books on proper shelves using filter and map methods
                      and do it for every shelf*/
-                  this.props.books.filter(book => book.shelf ===
-                  'currentlyReading').map( book =>(
-                  <li key={book.id}>
-                    {/* making a list every list item needs a unique key*/}
-                    <Book
-                    book={book}
-                    moveToShelf={this.props.moveToShelf} /* pass it from one component to another*/
-                    shelfValue='currentlyReading'
-                    />
-                  </li>))
-                }
+                  this.props.books
+                    .filter(book => book.shelf === "currentlyReading")
+                    .map(book => (
+                      <li key={book.id}>
+                        {/* making a list every list item needs a unique key*/}
+                        <Book
+                          book={book}
+                          changeShelf={
+                            this.props.changeShelf
+                          } /* pass it from one component to another*/
+                          shelfValue="currentlyReading"
+                        />
+                      </li>
+                    ))}
                 </ol>
               </div>
             </div>
@@ -36,17 +38,17 @@ class MainPage extends Component {
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  {
-                    this.props.books
-                    .filter(book => book.shelf === "wantToRead").map(book => (
+                  {this.props.books
+                    .filter(book => book.shelf === "wantToRead")
+                    .map(book => (
                       <li key={book.id}>
                         <Book
-                        book={book}
-                        moveToShelf={this.props.moveToShelf}
-                        shelfValue='wantToRead'
+                          book={book}
+                          changeShelf={this.props.changeShelf}
+                          shelfValue="wantToRead"
                         />
-                      </li>))
-                  }
+                      </li>
+                    ))}
                 </ol>
               </div>
             </div>
@@ -54,27 +56,24 @@ class MainPage extends Component {
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  {
-                    this.props.books
-                  .filter(book => book.shelf === 'read')
-                  .map(book =>(
-                  <li key={book.id}>
-                    <Book
-                    book={book}
-                    moveToShelf={this.props.moveToShelf}
-                    shelfValue='read'
-                    />
-                  </li>))
-                }
+                  {this.props.books
+                    .filter(book => book.shelf === "read")
+                    .map(book => (
+                      <li key={book.id}>
+                        <Book
+                          book={book}
+                          changeShelf={this.props.changeShelf}
+                          shelfValue="read"
+                        />
+                      </li>
+                    ))}
                 </ol>
               </div>
             </div>
           </div>
         </div>
         <div className="open-search">
-          <Link to="/SearchPage">
-            Add a book
-          </Link>
+          <Link to="/SearchPage">Add a book</Link>
         </div>
       </div>
     );
