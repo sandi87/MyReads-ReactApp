@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import Book from "./Book";
 
 
@@ -71,9 +72,9 @@ class MainPage extends Component {
           </div>
         </div>
         <div className="open-search">
-          <a onClick={() => this.setState({ showSearchPage: true })}>
+          <Link to="/SearchPage">
             Add a book
-          </a>
+          </Link>
         </div>
       </div>
     );
