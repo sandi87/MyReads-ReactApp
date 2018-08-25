@@ -17,8 +17,12 @@ class SearchPage extends Component {
   updateSearchBooks = (query) => {
     if(query) {
     BooksAPI.search(query).then((searchBooks) => {
-      this.setState({ searchBooks: searchBooks})
-
+      {/*if there is an error it change state to an array, for the map method can work properly*/}
+      if (searchBooks.error) {
+        this.setState({searchBooks: [] });
+      } else {
+        this.setState({ searchBooks: searchBooks})
+      }
     })
   } else {
     this.setState({ searchedBooks: [] });
