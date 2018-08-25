@@ -40,6 +40,7 @@ class SearchPage extends Component {
           <Link to="/" className="close-search">
             Close
           </Link>
+          {/*https://stackoverflow.com/questions/28868071/onchange-event-using-react-js-for-drop-down*/}
           <div className="search-books-input-wrapper">
             <input
               type="text"
