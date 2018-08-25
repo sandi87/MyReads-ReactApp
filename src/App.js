@@ -28,12 +28,14 @@ class BooksApp extends React.Component {
 
     return(
       <div className="app">
-     {/*<MainPage  use props from parent to use/pass them to other components
+     <MainPage
       books={this.state.books}
       moveToShelf={this.moveToShelf}
-      /> */}
+      />
 
-      <SearchPage />
+      {/* <SearchPage
+      // moveToShelf={this.moveToShelf}
+      // */}
       </div>
     )
 };

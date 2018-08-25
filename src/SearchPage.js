@@ -50,6 +50,7 @@ class SearchPage extends Component {
               <li key={searchBooks.id}>
               <Book
               book={searchBooks}
+              moveToShelf={this.props.moveToShelf}
               />
               </li>
             ))
