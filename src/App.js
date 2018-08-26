@@ -16,10 +16,11 @@ class BooksApp extends React.Component {
     });
   }
   changeShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf);
+
     BooksAPI.getAll().then(books => {
       this.setState({ books });
-    }); //to update books on shelves after selection
+    });
+    BooksAPI.update(book, shelf); //to update books on shelves after selection
   }; //to update we needs to use update method from BooksAPI
 
   render() {
@@ -29,16 +30,19 @@ class BooksApp extends React.Component {
           exact
           path="/"
           render={() => (
-            <MainPage books={this.state.books} changeShelf={this.changeShelf} />
+            <MainPage books={this.state.books}
+              changeShelf={this.changeShelf}
+              />
           )}
         />
 
         <Route
-          path="/searchPage"
+          path="/search"
           render={() => (
             <SearchPage
               changeShelf={this.changeShelf}
               books={this.state.books}
+              updateSearching={this.updateSearching}
             />
           )}
         />
