@@ -26,9 +26,9 @@ class SearchPage extends Component {
         } else {
           this.setState({ searchBooks: searchBooks });
         }
-      });
+      })
     } else {
-      this.setState({ searchedBooks: [] });
+      this.setState({ searchBooks: [] });
     }
   };
 
