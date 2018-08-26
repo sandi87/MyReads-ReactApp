@@ -24,9 +24,7 @@ class MainPage extends Component {
                         {/* making a list every list item needs a unique key*/}
                         <Book
                           book={book}
-                          changeShelf={
-                            this.props.changeShelf
-                          } /* pass it from one component to another*/
+                          changeShelf={this.props.changeShelf}
                           shelfValue="currentlyReading"
                         />
                       </li>
@@ -73,7 +71,7 @@ class MainPage extends Component {
           </div>
         </div>
         <div className="open-search">
-          <Link to="/SearchPage">Add a book</Link>
+          <Link to="/search">Add a book</Link>
         </div>
       </div>
     );
