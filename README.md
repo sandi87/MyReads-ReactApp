@@ -2,7 +2,10 @@
 This is application made for Udacity Nanodegree Program. Based on React.
 
 # MyReads how to open the Project
-To run this project you have to have Node.js installed on your machine.
+To run this project you have to have Node.js installed on your machine:
+
+npm install
+
 When it is installed just download/clone this repository and open the app typing in project directory in terminal:
 
 npm start
